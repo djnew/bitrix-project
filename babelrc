@@ -1,0 +1,26 @@
+{
+  "ignore": [
+    "node_modules/**/*"
+  ],
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "browsers": [
+            "ie 10"
+          ]
+        }
+      }
+    ]
+  ],
+  "plugins": [
+    "syntax-dynamic-import",
+    "transform-object-assign",
+    "@babel/transform-async-to-generator",
+    "@babel/transform-arrow-functions",
+    "@babel/transform-modules-commonjs",
+    "transform-promise-to-bluebird",
+    "@babel/transform-runtime"
+  ]
+}

@@ -1,6 +1,7 @@
 /* global jQuery */
 
 // import local dependencies
+
 import Router from './util/Router';
 
 import common from './routes/common';

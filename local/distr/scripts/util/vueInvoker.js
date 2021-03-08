@@ -29,22 +29,25 @@ export default {
     const collection = [];
 
     nodes.forEach((item) => {
-      let initialData = item.dataset[this.options.initialDataAttr];
+      const initialData = {};
 
-      if (initialData !== undefined) {
+      for (let i = 0; i < Object.keys(item.dataset).length; i += 1) {
+        const key = Object.keys(item.dataset)[i];
         try {
-          initialData = JSON.parse(initialData);
+          initialData[key] = JSON.parse(item.dataset[key]);
         } catch (e) {
+          initialData[key] = item.dataset[key];
           logger.warn(e);
         }
       }
+
 
       if (components[item.dataset[this.options.componentDataAttr]] !== undefined) {
         collection.push(this.createComponentInstance(
           Vue,
           item,
           components[item.dataset[this.options.componentDataAttr]],
-          initialData,
+          { ...initialData },
         ));
       }
     });
@@ -64,7 +67,7 @@ export default {
       el: element,
       render(h) {
         return h(component, {
-          props: { initial: data },
+          props: data,
         });
       },
     });

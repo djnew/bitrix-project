@@ -1,14 +1,17 @@
 {
-  "parser": "babel-eslint",
-  "extends": "airbnb-base",
-  "plugins": ["vue"],
-  "rules": {
-    "vue/jsx-uses-vars": 2,
-    "no-param-reassign": 0,
-    "max-len": 0,
-    "func-names": 0
-  },
-  "env": {
-    "browser": "true"
-  }
+    "parser": "babel-eslint",
+    "extends": "airbnb-base",
+    "plugins": [
+        "vue"
+    ],
+    "rules": {
+        "vue/jsx-uses-vars": 2,
+        "no-param-reassign": 0,
+        "max-len": 0,
+        "func-names": 0,
+        "linebreak-style": 0
+    },
+    "env": {
+        "browser": true
+    }
 }

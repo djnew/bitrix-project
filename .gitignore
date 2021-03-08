@@ -1,3 +1,4 @@
+.idea
 
 /node_modules/
 /bower_components/
@@ -6,7 +7,7 @@
 /bitrix
 /upload
 
-/local/build
+/local/assets/css_js
 
 *.log
 
